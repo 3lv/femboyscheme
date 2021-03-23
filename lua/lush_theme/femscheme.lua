@@ -22,7 +22,7 @@ local theme = lush(function()
   return {
 
     --   <HighlightGroupName> { bg = <hsl>, fg = <hsl>, sp = <hsl>, gui = <string> },
-    Normal { bg = purple.darken(85), fg = normal }, -- normal text
+    Normal { fg = normal }, -- normal text
     --CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     --Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
     --CursorColumn { CursorLine }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
