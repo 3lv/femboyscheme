@@ -90,7 +90,7 @@ local theme = lush(function()
     -- VertSplit    { }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    -- SignColumn   { }, -- column where |signs| are displayed
+    SignColumn   { bg = Normal.bg}, -- column where |signs| are displayed
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
