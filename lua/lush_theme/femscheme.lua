@@ -183,6 +183,12 @@ local theme = lush(function()
     BufferCurrentSign { bg = "none"},
     BufferCurrentTarget { bg = "none"},
 
+    BufferInactive { bg = "none"},
+    BufferInactiveIcon { bg = "none"},
+    BufferInactiveIndex { bg = "none"},
+    BufferInactiveMod { bg = "none"},
+    BufferInactiveSign { bg = "none"},
+    BufferInactiveTarget { bg = "none"},
     -- LspDiagnosticsError               { }, -- used for "Error" diagnostic virtual text
     -- LspDiagnosticsErrorSign           { }, -- used for "Error" diagnostic signs in sign column
     -- LspDiagnosticsErrorFloating       { }, -- used for "Error" diagnostic messages in the diagnostics float
