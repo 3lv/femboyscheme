@@ -5,7 +5,7 @@ local bold = "bold"
 local bold0 = "none"
 
 
-local test = hsl(60, 100 ,50)
+local test = hsl(50, 100 ,50)
 local pink= hsl(320, 100, 50)
 local purple = hsl(280, 100, 50)
 local scontrast = hsl(180, 50,50)
@@ -22,7 +22,7 @@ local theme = lush(function()
   return {
 
     --   <HighlightGroupName> { bg = <hsl>, fg = <hsl>, sp = <hsl>, gui = <string> },
-    Normal { fg = normal }, -- normal text
+    Normal { bg="none",fg = normal }, -- normal text
     --CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     --Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
     --CursorColumn { CursorLine }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
@@ -174,6 +174,8 @@ local theme = lush(function()
 
     -- These groups are for the native LSP client. Some other LSP clients may use
     -- these groups, or use their own. Consult your LSP client's documentation.
+
+    BufferTabpageFill { bg = "none"},
 
     -- LspDiagnosticsError               { }, -- used for "Error" diagnostic virtual text
     -- LspDiagnosticsErrorSign           { }, -- used for "Error" diagnostic signs in sign column
