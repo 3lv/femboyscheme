@@ -2,6 +2,7 @@ local lush = require('lush')
 local hsl = lush.hsl
 
 local bold = "bold"
+local none = "none"
 local bold0 = "none"
 
 
@@ -22,7 +23,7 @@ local theme = lush(function()
   return {
 
     --   <HighlightGroupName> { bg = <hsl>, fg = <hsl>, sp = <hsl>, gui = <string> },
-    Normal { bg="none",fg = normal }, -- normal text
+    Normal { bg = "none", fg = normal }, -- normal text
     --CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     --Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
     --CursorColumn { CursorLine }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
@@ -83,11 +84,11 @@ local theme = lush(function()
     -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
     -- DiffText     { }, -- diff mode: Changed text within a changed line |diff.txt|
-    -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer  { fg = "bg"}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     -- ErrorMsg     { }, -- error messages on the command line
-    -- VertSplit    { }, -- the column separating vertically split windows
+    VertSplit    { }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
     SignColumn   { bg = Normal.bg}, -- column where |signs| are displayed
