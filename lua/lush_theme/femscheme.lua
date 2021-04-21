@@ -176,7 +176,7 @@ local theme = lush(function()
     -- these groups, or use their own. Consult your LSP client's documentation.
 
     BufferTabpageFill { bg = "none"},
-    BufferCurrent { bg = "none"},
+    BufferCurrent { bg = "none", gui="bold"},
     BufferCurrentIcon { bg = "none"},
     BufferCurrentIndex { bg = "none"},
     BufferCurrentMod { bg = "none"},
@@ -189,6 +189,14 @@ local theme = lush(function()
     BufferInactiveMod { bg = "none"},
     BufferInactiveSign { bg = "none"},
     BufferInactiveTarget { bg = "none"},
+
+
+    BufferVisible { bg = "none"},
+    BufferVisibleIcon { bg = "none"},
+    BufferVisibleIndex { bg = "none"},
+    BufferVisibleMod { bg = "none"},
+    BufferVisibleSign { bg = "none"},
+    BufferVisibleTarget { bg = "none"},
     -- LspDiagnosticsError               { }, -- used for "Error" diagnostic virtual text
     -- LspDiagnosticsErrorSign           { }, -- used for "Error" diagnostic signs in sign column
     -- LspDiagnosticsErrorFloating       { }, -- used for "Error" diagnostic messages in the diagnostics float
