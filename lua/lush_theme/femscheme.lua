@@ -11,6 +11,9 @@ local pink= hsl(320, 100, 50)
 local purple = hsl(280, 100, 50)
 local scontrast = hsl(180, 50,50)
 local contrast = hsl(180, 70, 50)
+local highlight = hsl(37, 39, 51)
+local gothpink = hsl(346, 55, 40)
+local comment = hsl(300,10,45)
 
 -- Specific
 
@@ -33,13 +36,13 @@ local theme = lush(function()
     -- Note: This looks similar to a link, but the defined group will have its
     -- own properties, cloned from the parent.
     -- Lets make Comments look like Whitespace, but with italics
-    -- Comment { Whitespace, gui="italic" },
+    Comment { fg = comment, gui="italic" },
 
     -- Here's how we might set our line numbers to be relational to Normal,
     -- note we'er also using some shorter aliases here.
     -- (`setlocal number`)
-    LineNr       { fg = pink.desaturate(50) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr { fg = purple, gui = "bold,underline" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNr       { fg = gothpink.lighten(20)}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    CursorLineNr { fg = highlight, gui = "bold" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 
     -- You can also use highlight groups to define "base" colors, if you dont
     -- want to use regular lua variables. They will behave in the same way.
