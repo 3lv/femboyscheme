@@ -201,6 +201,7 @@ local theme = lush(function()
     BufferVisibleMod { bg = "none"},
     BufferVisibleSign { bg = "none"},
     BufferVisibleTarget { bg = "none"},
+    DiagnosticError { bg = test},
     LspDiagnosticsError { bg = test},
     LspDiagnosticsErrorSign           { bg = test}, -- used for "Error" diagnostic signs in sign column
     LspDiagnosticsErrorFloating       { bg = test}, -- used for "Error" diagnostic messages in the diagnostics float
