@@ -87,14 +87,14 @@ local theme = lush(function()
     -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
     -- DiffText     { }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer  { fg = "bg"}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    -- EndOfBuffer  { fg = "bg"}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     -- ErrorMsg     { }, -- error messages on the command line
     VertSplit    { }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    SignColumn   { bg = Normal.bg}, -- column where |signs| are displayed
+    -- SignColumn   { bg = Normal.bg}, -- column where |signs| are displayed
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -201,6 +201,7 @@ local theme = lush(function()
     BufferVisibleMod { bg = "none"},
     BufferVisibleSign { bg = "none"},
     BufferVisibleTarget { bg = "none"},
+    DiagnosticError { fg = test},
     LspDiagnosticsError { fg = test},
     LspDiagnosticsErrorSign           { fg = test}, -- used for "Error" diagnostic signs in sign column
     LspDiagnosticsErrorFloating       { fg = test}, -- used for "Error" diagnostic messages in the diagnostics float
@@ -215,7 +216,7 @@ local theme = lush(function()
     LspDiagnosticsHintFloating        { fg = test}, -- used for "Hint" diagnostic messages in the diagnostics float
     LspReferenceText                  { fg = test}, -- used for highlighting "text" references
     LspReferenceRead                  { fg = test}, -- used for highlighting "read" references
-    LspReferenceWrite                 { fg = test}, -- used for highlighting "write" references
+    LspReferenceWrite                 { bg = test}, -- used for highlighting "write" references
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.
