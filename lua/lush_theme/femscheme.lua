@@ -152,7 +152,7 @@ local theme = lush(function()
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = purple.lighten(40),}, -- (preferred) int, long, char, etc.
+    Type           { fg = purple.lighten(60),}, -- (preferred) int, long, char, etc.
     Keyword        { fg = Type.fg.darken(40)}, --  any other keyword
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
@@ -201,21 +201,21 @@ local theme = lush(function()
     BufferVisibleMod { bg = "none"},
     BufferVisibleSign { bg = "none"},
     BufferVisibleTarget { bg = "none"},
-    -- LspDiagnosticsError               { }, -- used for "Error" diagnostic virtual text
-    -- LspDiagnosticsErrorSign           { }, -- used for "Error" diagnostic signs in sign column
-    -- LspDiagnosticsErrorFloating       { }, -- used for "Error" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsWarning             { }, -- used for "Warning" diagnostic virtual text
-    -- LspDiagnosticsWarningSign         { }, -- used for "Warning" diagnostic signs in sign column
-    -- LspDiagnosticsWarningFloating     { }, -- used for "Warning" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsInformation         { }, -- used for "Information" diagnostic virtual text
-    -- LspDiagnosticsInformationSign     { }, -- used for "Information" signs in sign column
-    -- LspDiagnosticsInformationFloating { }, -- used for "Information" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsHint                { }, -- used for "Hint" diagnostic virtual text
-    -- LspDiagnosticsHintSign            { }, -- used for "Hint" diagnostic signs in sign column
-    -- LspDiagnosticsHintFloating        { }, -- used for "Hint" diagnostic messages in the diagnostics float
-    -- LspReferenceText                  { }, -- used for highlighting "text" references
-    -- LspReferenceRead                  { }, -- used for highlighting "read" references
-    -- LspReferenceWrite                 { }, -- used for highlighting "write" references
+    LspDiagnosticsError { bg = test},
+    LspDiagnosticsErrorSign           { bg = test}, -- used for "Error" diagnostic signs in sign column
+    LspDiagnosticsErrorFloating       { bg = test}, -- used for "Error" diagnostic messages in the diagnostics float
+    LspDiagnosticsWarning             { bg = test }, -- used for "Warning" diagnostic virtual text
+    LspDiagnosticsWarningSign         { bg = test}, -- used for "Warning" diagnostic signs in sign column
+    LspDiagnosticsWarningFloating     { bg = test}, -- used for "Warning" diagnostic messages in the diagnostics float
+    LspDiagnosticsInformation         { bg = test}, -- used for "Information" diagnostic virtual text
+    LspDiagnosticsInformationSign     { bg = test}, -- used for "Information" signs in sign column
+    LspDiagnosticsInformationFloating { bg = test}, -- used for "Information" diagnostic messages in the diagnostics float
+    LspDiagnosticsHint                { bg = test}, -- used for "Hint" diagnostic virtual text
+    LspDiagnosticsHintSign            { bg = test}, -- used for "Hint" diagnostic signs in sign column
+    LspDiagnosticsHintFloating        { bg = test}, -- used for "Hint" diagnostic messages in the diagnostics float
+    LspReferenceText                  { bg = test}, -- used for highlighting "text" references
+    LspReferenceRead                  { bg = test}, -- used for highlighting "read" references
+    LspReferenceWrite                 { bg = test}, -- used for highlighting "write" references
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.
