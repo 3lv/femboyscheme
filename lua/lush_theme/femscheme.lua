@@ -15,12 +15,17 @@ local highlight = hsl(37, 39, 51)
 local gothpink = hsl(346, 55, 40)
 local comment = hsl(300,10,45)
 
+
+local fairygreen = hsl(83, 60, 64)
+local errorred = hsl(2, 54, 44)
+
 -- Specific
 
 local normal = pink.lighten(80)
 
 --local sea_foam_triadic = sea_foam.rotate(120)
 --local sea_foam_complement = sea_foam.rotate(180).darken(10).saturate(10)
+
 
 local theme = lush(function()
   return {
@@ -90,31 +95,31 @@ local theme = lush(function()
     -- EndOfBuffer  { fg = "bg"}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
-    -- ErrorMsg     { }, -- error messages on the command line
+    ErrorMsg     { fg = errorred}, -- error messages on the command line
     VertSplit    { }, -- the column separating vertically split windows
     -- Folded       { }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    -- SignColumn   { bg = Normal.bg}, -- column where |signs| are displayed
+    SignColumn   { bg = Normal.bg }, -- column where |signs| are displayed
     -- Substitute   { }, -- |:substitute| replacement text highlighting
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-    -- MoreMsg      { }, -- |more-prompt|
+    MoreMsg      { fg = fairygreen }, -- |more-prompt|
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- NormalNC     { }, -- normal text in non-current windows
     -- Pmenu        { }, -- Popup menu: normal item.
     -- PmenuSel     { }, -- Popup menu: selected item.
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
-    -- Question     { }, -- |hit-enter| prompt and yes/no questions
+    Question     {  fg = MoreMsg.fg }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine   { bg = "none", gui="bold"}, -- status line of current window
-    StatusLineNC { bg = "none"}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine      { }, -- tab pages line, not active tab page label
-    -- TabLineFill  { }, -- tab pages line, where there are no labels
+    StatusLine   { bg = "none", gui="bold" }, -- status line of current window
+    StatusLineNC { bg = "none" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine      { bg = "none" }, -- tab pages line, not active tab page label
+    TabLineFill  { bg = "none" }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
     -- Title        { }, -- titles for output from ":set all", ":autocmd" etc.
     -- Visual       { }, -- Visual mode selection
@@ -136,8 +141,8 @@ local theme = lush(function()
     -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-    -- Identifier     { }, -- (preferred) any variable name
-    -- Function       { fg = }, -- function name (also: methods for classes)
+    Identifier     {  }, -- (preferred) any variable name
+    Function       { bg = Normal.bg, fg = gothpink.darken(20) }, -- function name (also: methods for classes)
 
     Statement      { fg = pink.darken(10).desaturate(30), gui = bold}, -- (preferred) any statement
     -- Conditional    { fg = test}, --  if, then, else, endif, switch, etc.
@@ -179,28 +184,28 @@ local theme = lush(function()
     -- These groups are for the native LSP client. Some other LSP clients may use
     -- these groups, or use their own. Consult your LSP client's documentation.
 
-    --BufferTabpageFill { bg = "none"},
-    --BufferCurrent { bg = "none", gui="bold"},
-    --BufferCurrentIcon { bg = "none"},
-    --BufferCurrentIndex { bg = "none"},
-    --BufferCurrentMod { bg = "none"},
-    --BufferCurrentSign { bg = "none"},
-    --BufferCurrentTarget { bg = "none"},
-    --
-    --BufferInactive { bg = "none"},
-    --BufferInactiveIcon { bg = "none"},
-    --BufferInactiveIndex { bg = "none"},
-    --BufferInactiveMod { bg = "none"},
-    --BufferInactiveSign { bg = "none"},
-    --BufferInactiveTarget { bg = "none"},
-    --
-    --
-    --BufferVisible { bg = "none"},
-    --BufferVisibleIcon { bg = "none"},
-    --BufferVisibleIndex { bg = "none"},
-    --BufferVisibleMod { bg = "none"},
-    --BufferVisibleSign { bg = "none"},
-    --BufferVisibleTarget { bg = "none"},
+    BufferTabpageFill { bg = "none"},
+    BufferCurrent { bg = "none", gui="bold"},
+    BufferCurrentIcon { bg = "none"},
+    BufferCurrentIndex { bg = "none"},
+    BufferCurrentMod { bg = "none"},
+    BufferCurrentSign { bg = "none"},
+    BufferCurrentTarget { bg = "none"},
+    
+    BufferInactive { bg = "none"},
+    BufferInactiveIcon { bg = "none"},
+    BufferInactiveIndex { bg = "none"},
+    BufferInactiveMod { bg = "none"},
+    BufferInactiveSign { bg = "none"},
+    BufferInactiveTarget { bg = "none"},
+    
+    
+    BufferVisible { bg = "none"},
+    BufferVisibleIcon { bg = "none"},
+    BufferVisibleIndex { bg = "none"},
+    BufferVisibleMod { bg = "none"},
+    BufferVisibleSign { bg = "none"},
+    BufferVisibleTarget { bg = "none"},
     DiagnosticError { fg = test},
     LspDiagnosticsError { fg = test},
     LspDiagnosticsErrorSign           { fg = test}, -- used for "Error" diagnostic signs in sign column
