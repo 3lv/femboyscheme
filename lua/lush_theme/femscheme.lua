@@ -179,28 +179,28 @@ local theme = lush(function()
     -- These groups are for the native LSP client. Some other LSP clients may use
     -- these groups, or use their own. Consult your LSP client's documentation.
 
-    BufferTabpageFill { bg = "none"},
-    BufferCurrent { bg = "none", gui="bold"},
-    BufferCurrentIcon { bg = "none"},
-    BufferCurrentIndex { bg = "none"},
-    BufferCurrentMod { bg = "none"},
-    BufferCurrentSign { bg = "none"},
-    BufferCurrentTarget { bg = "none"},
-
-    BufferInactive { bg = "none"},
-    BufferInactiveIcon { bg = "none"},
-    BufferInactiveIndex { bg = "none"},
-    BufferInactiveMod { bg = "none"},
-    BufferInactiveSign { bg = "none"},
-    BufferInactiveTarget { bg = "none"},
-
-
-    BufferVisible { bg = "none"},
-    BufferVisibleIcon { bg = "none"},
-    BufferVisibleIndex { bg = "none"},
-    BufferVisibleMod { bg = "none"},
-    BufferVisibleSign { bg = "none"},
-    BufferVisibleTarget { bg = "none"},
+    --BufferTabpageFill { bg = "none"},
+    --BufferCurrent { bg = "none", gui="bold"},
+    --BufferCurrentIcon { bg = "none"},
+    --BufferCurrentIndex { bg = "none"},
+    --BufferCurrentMod { bg = "none"},
+    --BufferCurrentSign { bg = "none"},
+    --BufferCurrentTarget { bg = "none"},
+    --
+    --BufferInactive { bg = "none"},
+    --BufferInactiveIcon { bg = "none"},
+    --BufferInactiveIndex { bg = "none"},
+    --BufferInactiveMod { bg = "none"},
+    --BufferInactiveSign { bg = "none"},
+    --BufferInactiveTarget { bg = "none"},
+    --
+    --
+    --BufferVisible { bg = "none"},
+    --BufferVisibleIcon { bg = "none"},
+    --BufferVisibleIndex { bg = "none"},
+    --BufferVisibleMod { bg = "none"},
+    --BufferVisibleSign { bg = "none"},
+    --BufferVisibleTarget { bg = "none"},
     DiagnosticError { fg = test},
     LspDiagnosticsError { fg = test},
     LspDiagnosticsErrorSign           { fg = test}, -- used for "Error" diagnostic signs in sign column
