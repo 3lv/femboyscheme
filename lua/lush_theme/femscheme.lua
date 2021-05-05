@@ -143,7 +143,7 @@ local theme = lush(function()
     -- Float          { }, --    a floating point constant: 2.3e10
 
     --Identifier     {  }, -- (preferred) any variable name
-    Function       { fg = lightblue.darken(50) }, -- function name (also: methods for classes)
+    Function       { fg = lightblue.darken(40) }, -- function name (also: methods for classes)
 
     Statement      { fg = pink.darken(10).desaturate(30), gui = bold}, -- (preferred) any statement
     -- Conditional    { fg = test}, --  if, then, else, endif, switch, etc.
@@ -186,7 +186,10 @@ local theme = lush(function()
     -- these groups, or use their own. Consult your LSP client's documentation.
     
 
-    QuickScopePrimary { fg = lightblue},
+    FNext1 { fg = fairygreen },
+    FPrev1 { FNext1 },
+    FNext2 { fg = fairygreen.darken(50) },
+    FPrev2 { FNext2 },
 
     BufferTabpageFill { bg = "none"},
     BufferCurrent { bg = "none", gui="bold"},
