@@ -15,6 +15,7 @@ local highlight = hsl(37, 39, 51)
 local gothpink = hsl(346, 55, 40)
 local comment = hsl(300,10,45)
 
+local lightblue = hsl(180, 100, 63)
 
 local fairygreen = hsl(83, 60, 64)
 local errorred = hsl(2, 54, 44)
@@ -141,8 +142,8 @@ local theme = lush(function()
     -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-    Identifier     {  }, -- (preferred) any variable name
-    Function       { bg = Normal.bg, fg = gothpink.darken(20) }, -- function name (also: methods for classes)
+    --Identifier     {  }, -- (preferred) any variable name
+    Function       { fg = lightblue.darken(50) }, -- function name (also: methods for classes)
 
     Statement      { fg = pink.darken(10).desaturate(30), gui = bold}, -- (preferred) any statement
     -- Conditional    { fg = test}, --  if, then, else, endif, switch, etc.
@@ -183,6 +184,9 @@ local theme = lush(function()
 
     -- These groups are for the native LSP client. Some other LSP clients may use
     -- these groups, or use their own. Consult your LSP client's documentation.
+    
+
+    QuickScopePrimary { fg = lightblue},
 
     BufferTabpageFill { bg = "none"},
     BufferCurrent { bg = "none", gui="bold"},
