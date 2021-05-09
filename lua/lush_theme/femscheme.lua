@@ -107,7 +107,7 @@ local theme = lush(function()
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg      { fg = fairygreen }, -- |more-prompt|
-    -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    --NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     -- NormalNC     { }, -- normal text in non-current windows
     -- Pmenu        { }, -- Popup menu: normal item.
     -- PmenuSel     { }, -- Popup menu: selected item.
@@ -118,7 +118,7 @@ local theme = lush(function()
     -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine   { bg = "none", gui="bold" }, -- status line of current window
-    StatusLineNC { bg = "none" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+	StatusLineNC { bg = "none" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine      { bg = "none" }, -- tab pages line, not active tab page label
     TabLineFill  { bg = "none" }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
@@ -186,6 +186,10 @@ local theme = lush(function()
     -- these groups, or use their own. Consult your LSP client's documentation.
     
 
+    StatusLineFileActive { fg = fairygreen, gui = 'bold' },
+    StatusLineFileActiveModified { fg = fairygreen, gui = 'bold,underline'},
+    StatusLineFileNonActive { fg = fairygreen},
+    StatusLineFileNonActiveModified { fg =fairygreen, gui = 'underline' },
     FFirst { fg = fairygreen },
     FSecond { fg = fairygreen.darken(50) },
 
