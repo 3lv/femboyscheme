@@ -27,6 +27,7 @@ function f.load_syntax()
 		FFirst = { fg = f.fairygreen, bg = f.fairygreen },
 		FFirst = { fg = f.fairydarker, bg = f.fairydarker },
 	}
+	return syntax
 end
 
 function f.colorscheme()
