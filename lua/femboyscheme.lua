@@ -12,6 +12,7 @@ local f = {
 	fairydarker =   '#648424',
 	errorred =      '#ad3834',
 	normal =        '#fac5e7',
+	none = 'NONE',
 }
 function f.highlight(group, color)
 	local style = color.style and 'gui='..color.style or 'gui=NONE'
@@ -23,9 +24,9 @@ end
 
 function f.load_syntax()
 	local syntax = {
-		Normal = { fg = f.normal, bg = f.normal },
-		FFirst = { fg = f.fairygreen, bg = f.fairygreen },
-		FFirst = { fg = f.fairydarker, bg = f.fairydarker },
+		Normal = { fg = f.normal, bg = f.none },
+		FFirst = { fg = f.fairygreen, bg = f.none },
+		FFirst = { fg = f.fairydarker, bg = f.none },
 	}
 	return syntax
 end
