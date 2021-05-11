@@ -32,7 +32,7 @@ local theme = lush(function()
   return {
 
     --   <HighlightGroupName> { bg = <hsl>, fg = <hsl>, sp = <hsl>, gui = <string> },
-    Normal { bg = "none", fg = normal }, -- normal text
+    Normal { bg ='none', fg = normal }, -- normal text
     --CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     --Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
     --CursorColumn { CursorLine }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
@@ -193,28 +193,28 @@ local theme = lush(function()
     FFirst { fg = fairygreen },
     FSecond { fg = fairygreen.darken(50) },
 
-    BufferTabpageFill { bg = "none"},
-    BufferCurrent { bg = "none", gui="bold"},
-    BufferCurrentIcon { bg = "none"},
-    BufferCurrentIndex { bg = "none"},
-    BufferCurrentMod { bg = "none"},
-    BufferCurrentSign { bg = "none"},
-    BufferCurrentTarget { bg = "none"},
-    
-    BufferInactive { bg = "none"},
-    BufferInactiveIcon { bg = "none"},
-    BufferInactiveIndex { bg = "none"},
-    BufferInactiveMod { bg = "none"},
-    BufferInactiveSign { bg = "none"},
-    BufferInactiveTarget { bg = "none"},
-    
-    
-    BufferVisible { bg = "none"},
-    BufferVisibleIcon { bg = "none"},
-    BufferVisibleIndex { bg = "none"},
-    BufferVisibleMod { bg = "none"},
-    BufferVisibleSign { bg = "none"},
-    BufferVisibleTarget { bg = "none"},
+    --BufferTabpageFill { bg = "none"},
+    --BufferCurrent { bg = "none", gui="bold"},
+    --BufferCurrentIcon { bg = "none"},
+    --BufferCurrentIndex { bg = "none"},
+    --BufferCurrentMod { bg = "none"},
+    --BufferCurrentSign { bg = "none"},
+    --BufferCurrentTarget { bg = "none"},
+    --
+    --BufferInactive { bg = "none"},
+    --BufferInactiveIcon { bg = "none"},
+    --BufferInactiveIndex { bg = "none"},
+    --BufferInactiveMod { bg = "none"},
+    --BufferInactiveSign { bg = "none"},
+    --BufferInactiveTarget { bg = "none"},
+    --
+    --
+    --BufferVisible { bg = "none"},
+    --BufferVisibleIcon { bg = "none"},
+    --BufferVisibleIndex { bg = "none"},
+    --BufferVisibleMod { bg = "none"},
+    --BufferVisibleSign { bg = "none"},
+    --BufferVisibleTarget { bg = "none"},
     DiagnosticError { fg = test},
     LspDiagnosticsDefaultError { fg = '#ec5f67' },
     LspDiagnosticsDefaultWarning { fg = '#fabd2f' },
