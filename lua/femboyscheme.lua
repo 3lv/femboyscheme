@@ -26,7 +26,7 @@ function f.load_syntax()
 	local syntax = {
 		Normal = { fg = f.normal, bg = f.none },
 		FFirst = { fg = f.fairygreen, bg = f.none },
-		FFirst = { fg = f.fairydarker, bg = f.none },
+		FSecond = { fg = f.fairydarker, bg = f.none },
 	}
 	return syntax
 end
