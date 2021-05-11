@@ -1,17 +1,17 @@
 local f = {
-	test =          #ffd500
-	pink =          #ff00aa
-	purple =        #aa00ff
-	scontrast =     #40bfbf
-	contrast =      #26d9d9
-	highlight =     #b38d51
-	gothpink =      #9e2e48
-	comment =       #7e677e
-	lightblue =     #42ffff
-	fairygreen =    #b0da6c 
-	fairydarker =   #648424
-	errorred =      #ad3834
-	normal =        #fac5e7
+	test =          '#ffd500'
+	pink =          '#ff00aa'
+	purple =        '#aa00ff'
+	scontrast =     '#40bfbf'
+	contrast =      '#26d9d9'
+	highlight =     '#b38d51'
+	gothpink =      '#9e2e48'
+	comment =       '#7e677e'
+	lightblue =     '#42ffff'
+	fairygreen =    '#b0da6c'
+	fairydarker =   '#648424'
+	errorred =      '#ad3834'
+	normal =        '#fac5e7'
 }
 function f.highlight(group, color)
 	local style = color.style and 'gui='..color.style or 'gui=NONE'
