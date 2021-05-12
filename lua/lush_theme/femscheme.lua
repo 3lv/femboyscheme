@@ -263,7 +263,7 @@ local theme = lush(function()
     -- TSMethod             { }, -- For method calls and definitions.
     -- TSField              { }, -- For fields.
     -- TSProperty           { }, -- Same as `TSField`.
-    -- TSConstructor        { }, -- For constructor calls and definitions: `                                                                       { }` in Lua, and Java constructors.
+    -- TSConstructor        { }, -- For constructor calls and definitions: `{ }` in Lua, and Java constructors.
     -- TSConditional        { }, -- For keywords related to conditionnals.
     -- TSRepeat             { }, -- For keywords related to loops.
     -- TSLabel              { }, -- For labels: `label:` in C and `:label:` in Lua.
