@@ -36,10 +36,8 @@ function f.load_syntax()
 		Delimiter = { fg = f.purple },
 		Operator = { fg = f.normalplus },
 		VertSplit = { bg = 'none' },
-		StatusLine = { gui = 'bold' },
-		StatusLineNC = { gui = 'none' },
-		StatusLineFileActive = { fg = f.fairygreen, gui = 'bold' },
-		StatusLineFileNonActive = { fg = f.fairygreen }
+		StatusLine = { style = 'bold' },
+		StatusLineNC = { style = 'none' },
 	}
 	return syntax
 end
@@ -56,10 +54,10 @@ function f.load_lazy_syntax()
 end
 
 function f.highlight(group, color)
-	local style = color.style and 'gui='..color.style or 'gui=NONE'
-	local fg = color.fg and 'guifg='..color.fg or 'guifg=NONE'
-	local bg = color.bg and 'guibg='..color.bg or 'guibg=NONE'
-	local sp = color.sp and 'guisp='..color.sp or ''
+	local style = 'gui='..(color.style or 'NONE')
+	local fg = 'guifg='..(color.fg or 'NONE')
+	local bg = 'guibg='..(color.bg or 'NONE')
+	local sp = 'guisp='..(color.sp or 'NONE')
 	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
 end
 
@@ -74,7 +72,6 @@ async_lazy_load = vim.loop.new_async(vim.schedule_wrap(function ()
 end))
 
 function f.colorscheme()
-	vim.api.nvim_command('hi clear')
 	if vim.fn.exists('syntax_on') then
 		vim.api.nvim_command('syntax reset')
 	end
