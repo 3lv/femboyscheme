@@ -15,13 +15,6 @@ local f = {
 	normal        = '#fac5e7',
 	none          = 'NONE',
 }
-function f.highlight(group, color)
-	local style = color.style and 'gui='..color.style or 'gui=NONE'
-	local fg = color.fg and 'guifg='..color.fg or 'guifg=NONE'
-	local bg = color.bg and 'guibg='..color.bg or 'guifg=NONE'
-	local sp = color.sp and 'guisp='..color.sp or ''
-	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
-end
 
 function f.load_syntax()
 	local syntax = {
@@ -29,11 +22,19 @@ function f.load_syntax()
 		Comment = { style = 'italic', fg = f.comment },
 		FFirst = { fg = f.fairygreen, bg = f.none },
 		FSecond = { fg = f.fairydarker, bg = f.none },
-		ErrorMsg = { fg = errorred },
-		MoreMsg = { fg = fairygreen },
-		Function = { fg = lightbluedark },
+		ErrorMsg = { fg = f.errorred },
+		MoreMsg = { fg = f.fairygreen },
+		Function = { fg = f.lightbluedark },
 	}
 	return syntax
+end
+
+function f.highlight(group, color)
+	local style = color.style and 'gui='..color.style or 'gui=NONE'
+	local fg = color.fg and 'guifg='..color.fg or 'guifg=NONE'
+	local bg = color.bg and 'guibg='..color.bg or 'guifg=NONE'
+	local sp = color.sp and 'guisp='..color.sp or ''
+	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
 end
 
 function f.colorscheme()
