@@ -23,32 +23,32 @@ local f = {
 
 function f.load_syntax()
 	local syntax = {
-		Normal = { fg = f.normal, bg = f.none },
-		Comment = { style = 'italic', fg = f.comment },
-		FFirst = { fg = f.fairygreen, bg = f.none },
-		FSecond = { fg = f.fairydarker, bg = f.none },
-		ErrorMsg = { fg = f.errorred },
-		MoreMsg = { fg = f.fairygreen },
-		Function = { fg = f.lightbluedark },
-		Statement = { fg = f.strongpink, style = 'bold'},
-		Type = { fg = f.purplelight },
-		Keyword = { fg = f.purpledark },
-		Delimiter = { fg = f.purple },
-		Operator = { fg = f.normalplus },
-		VertSplit = { bg = 'none' },
-		StatusLine = { style = 'bold' },
-		StatusLineNC = { style = 'none' },
+		Normal                      = { fg = f.normal, bg = f.none },
+		Comment                     = { style = 'italic', fg = f.comment },
+		FFirst                      = { fg = f.fairygreen, bg = f.none },
+		FSecond                     = { fg = f.fairydarker, bg = f.none },
+		ErrorMsg                    = { fg = f.errorred },
+		MoreMsg                     = { fg = f.fairygreen },
+		Function                    = { fg = f.lightbluedark },
+		Statement                   = { fg = f.strongpink, style = 'bold'},
+		Type                        = { fg = f.purplelight },
+		Keyword                     = { fg = f.purpledark },
+		Delimiter                   = { fg = f.purple },
+		Operator                    = { fg = f.normalplus },
+		VertSplit                   = { bg = 'none' },
+		StatusLine                  = { style = 'bold' },
+		StatusLineNC                = { style = 'none' },
 	}
 	return syntax
 end
 
 function f.load_lazy_syntax()
 	local syntax = {
-		SingColumn = { bg = 'none' },
-		LspDiagnosticsDefaultError = { fg = '#ec5f67' },
-		LspDiagnosticsDefaultWarning  = { fg = '#fabd2f' },
-		LspDiagnosticsDefaultHint = { fg = '#51afef' },
-		LspDiagnosticsDefaultInformation = { fg = '#51afef' },
+		SignColumn                  = { bg = 'none' },
+		LspDiagnosticsDefaultError  = { fg = '#ec5f67' },
+		LspDiagnosticsDefaultWarning= { fg = '#fabd2f' },
+		LspDiagnosticsDefaultHint   = { fg = '#51afef' },
+		LspDiagnosticsDefaultInforma= { fg = '#51afef' },
 	}
 	return syntax
 end
@@ -64,11 +64,11 @@ end
 
 local async_lazy_load
 async_lazy_load = vim.loop.new_async(vim.schedule_wrap(function ()
-  local syntax = f.load_lazy_syntax()
-  for group,colors in pairs(syntax) do
-    f.highlight(group,colors)
-  end
-  async_lazy_load:close()
+	local syntax = f.load_lazy_syntax()
+	for group, colors in pairs(syntax) do
+		f.highlight(group, colors)
+	end
+	async_lazy_load:close()
 end))
 
 function f.colorscheme()
