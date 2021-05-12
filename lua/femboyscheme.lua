@@ -34,6 +34,7 @@ function f.highlight(group, color)
 	local fg = color.fg and 'guifg='..color.fg or 'guifg=NONE'
 	local bg = color.bg and 'guibg='..color.bg or 'guifg=NONE'
 	local sp = color.sp and 'guisp='..color.sp or ''
+	print( group..' '..style..' '..fg..' '..bg..' '..sp )
 	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
 end
 
@@ -47,8 +48,6 @@ function f.colorscheme()
 	vim.g.colors_name = 'femboyscheme'
 	local syntax = f.load_syntax()
 	for group, colors in pairs(syntax) do
-		print(group)
-		table.foreach(colors, print)
 		f.highlight(group, colors)
 	end
 end
