@@ -42,6 +42,8 @@ function f.colorscheme()
 	if vim.fn.exists('syntax_on') then
 		vim.api.nvim_command('syntax reset')
 	end
+	print(f.lightbluedark)
+	print(self:lightbluedark)
 	vim.o.background = 'dark'
 	vim.o.termguicolors = true
 	vim.g.colors_name = 'femboyscheme'
