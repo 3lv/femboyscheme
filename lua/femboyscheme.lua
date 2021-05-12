@@ -36,6 +36,8 @@ function f.load_syntax()
 		Delimiter = { fg = f.purple },
 		Operator = { fg = f.normalplus },
 		VertSplit = { bg = 'none' },
+		StatusLine = { gui = 'bold' },
+		StatusLineNC = { gui = 'none' },
 	}
 	return syntax
 end
