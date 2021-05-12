@@ -63,6 +63,16 @@ function f.highlight(group, color)
 	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
 end
 
+
+local async_lazy_load
+async_lazy_load = vim.loop.new_async(vim.schedule_wrap(function ()
+  local syntax = zephyr.load_lazy_syntax()
+  for group,colors in pairs(syntax) do
+    zephyr.highlight(group,colors)
+  end
+  async_lazy_load:close()
+end))
+
 function f.colorscheme()
 	vim.api.nvim_command('hi clear')
 	if vim.fn.exists('syntax_on') then
@@ -75,6 +85,7 @@ function f.colorscheme()
 	for group, colors in pairs(syntax) do
 		f.highlight(group, colors)
 	end
+	async_lazy_load:send()
 end
 
 f.colorscheme()
