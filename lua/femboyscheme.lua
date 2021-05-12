@@ -35,6 +35,18 @@ function f.load_syntax()
 		Keyword = { fg = f.purpledark },
 		Delimiter = { fg = f.purple },
 		Operator = { fg = f.normalplus },
+		VertSplit = { bg = 'none' },
+	}
+	return syntax
+end
+
+function f.load_lazy_syntax()
+	local syntax = {
+		SingColumn = { bg = 'none' },
+		LspDiagnosticsDefaultError = { fg = '#ec5f67' },
+		LspDiagnosticsDefaultWarning  = { fg = '#fabd2f' },
+		LspDiagnosticsDefaultHint = { fg = '#51afef' },
+		LspDiagnosticsDefaultInformation = { fg = '#51afef' },
 	}
 	return syntax
 end
