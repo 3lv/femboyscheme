@@ -1,11 +1,15 @@
 local f = {
 	test          = '#ffd500',
 	pink          = '#ff00aa',
-	purple        = '#aa00ff',
+	--purple        = '#aa00ff',
+	purple        = '#c44dff',
+	purpleligh    = '#dc9cfc',
+	purpledark    = '#a300f5',
 	scontrast     = '#40bfbf',
 	contrast      = '#26d9d9',
 	highlight     = '#b38d51',
 	gothpink      = '#9e2e48',
+	strongpink    = '#c3228e',
 	comment       = '#7e677e',
 	lightblue     = '#42ffff',
 	lightbluedark = '#00c2c2',
@@ -13,6 +17,7 @@ local f = {
 	fairydarker   = '#648424',
 	errorred      = '#ad3834',
 	normal        = '#fac5e7',
+	normalplus    = '#ff9edf',
 	none          = 'NONE',
 }
 
@@ -25,6 +30,11 @@ function f.load_syntax()
 		ErrorMsg = { fg = f.errorred },
 		MoreMsg = { fg = f.fairygreen },
 		Function = { fg = f.lightbluedark },
+		Statement = { fg = f.strongpink },
+		Type = { fg = f.purplelight },
+		Keyword = { fg = f.purpledark },
+		Delimiter = { fg = f.purple },
+		Operator = { fg = f.normalplus },
 	}
 	return syntax
 end
