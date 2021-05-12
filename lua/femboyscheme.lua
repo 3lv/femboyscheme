@@ -43,7 +43,6 @@ function f.colorscheme()
 		vim.api.nvim_command('syntax reset')
 	end
 	print(f.lightbluedark)
-	print(self:lightbluedark)
 	vim.o.background = 'dark'
 	vim.o.termguicolors = true
 	vim.g.colors_name = 'femboyscheme'
