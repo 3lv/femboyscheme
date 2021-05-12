@@ -19,8 +19,7 @@ local f = {
 	normal        = '#fac5e7',
 	normalplus    = '#ff9edf',
 	none          = 'NONE',
-	search        = '#c4b345',
-	incsearch     = '#b58900',
+	search        = { bg = '#c4b345', fg = '#1c1b17', incbg = '#c48945', incfg='#030302' }
 }
 
 function f.load_syntax()
@@ -40,8 +39,8 @@ function f.load_syntax()
 		VertSplit                   = { bg = 'none' },
 		StatusLine                  = { style = 'bold' },
 		StatusLineNC                = { style = 'none' },
-		Search                      = { bg = f.search },
-		IncSearch                   = { bg = f.incsearch },
+		Search                      = { bg = f.search.bg, fg = f.search.fg },
+		IncSearch                   = { bg = f.search.incbg, fg = f.search.incfg },
 	}
 	return syntax
 end
