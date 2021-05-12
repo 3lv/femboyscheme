@@ -42,12 +42,13 @@ function f.colorscheme()
 	if vim.fn.exists('syntax_on') then
 		vim.api.nvim_command('syntax reset')
 	end
-	print(f.lightbluedark)
 	vim.o.background = 'dark'
 	vim.o.termguicolors = true
 	vim.g.colors_name = 'femboyscheme'
 	local syntax = f.load_syntax()
 	for group, colors in pairs(syntax) do
+		print(group)
+		table.foreach(colors, print)
 		f.highlight(group, colors)
 	end
 end
