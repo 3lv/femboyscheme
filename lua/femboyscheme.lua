@@ -38,6 +38,8 @@ function f.load_syntax()
 		VertSplit = { bg = 'none' },
 		StatusLine = { gui = 'bold' },
 		StatusLineNC = { gui = 'none' },
+		StatusLineFileActive = { fg = f.fairygreen, gui = 'bold' },
+		StatusLineFileNonActive = { fg = f.fairygreen }
 	}
 	return syntax
 end
