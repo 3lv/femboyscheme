@@ -66,9 +66,9 @@ end
 
 local async_lazy_load
 async_lazy_load = vim.loop.new_async(vim.schedule_wrap(function ()
-  local syntax = zephyr.load_lazy_syntax()
+  local syntax = f.load_lazy_syntax()
   for group,colors in pairs(syntax) do
-    zephyr.highlight(group,colors)
+    f.highlight(group,colors)
   end
   async_lazy_load:close()
 end))
