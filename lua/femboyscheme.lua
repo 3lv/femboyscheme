@@ -30,7 +30,7 @@ function f.load_syntax()
 		ErrorMsg = { fg = f.errorred },
 		MoreMsg = { fg = f.fairygreen },
 		Function = { fg = f.lightbluedark },
-		Statement = { fg = f.strongpink },
+		Statement = { fg = f.strongpink, style = 'bold'},
 		Type = { fg = f.purplelight },
 		Keyword = { fg = f.purpledark },
 		Delimiter = { fg = f.purple },
