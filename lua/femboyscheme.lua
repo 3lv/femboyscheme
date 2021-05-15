@@ -26,20 +26,20 @@ local f = {
 function f.load_syntax()
 	local syntax = {
 		Normal                      = { fg = f.normal, bg = f.none },
-		Comment                     = { style = 'italic', fg = f.comment },
+		Comment                     = { gui = 'italic', fg = f.comment },
 		FFirst                      = { fg = f.fairygreen, bg = f.none },
 		FSecond                     = { fg = f.fairydarker, bg = f.none },
 		ErrorMsg                    = { fg = f.errorred },
 		MoreMsg                     = { fg = f.fairygreen },
 		Function                    = { fg = f.lightbluedark },
-		Statement                   = { fg = f.strongpink, style = 'bold'},
+		Statement                   = { fg = f.strongpink, gui = 'bold'},
 		Type                        = { fg = f.purplelight },
 		Keyword                     = { fg = f.purpledark },
 		Delimiter                   = { fg = f.purple },
 		Operator                    = { fg = f.normalplus },
 		VertSplit                   = { bg = 'none' },
-		StatusLine                  = { style = 'bold' },
-		StatusLineNC                = { style = 'none' },
+		StatusLine                  = { gui = 'bold' },
+		StatusLineNC                = { gui = 'none' },
 		Search                      = f.search,
 		IncSearch                   = f.incsearch,
 	}
@@ -60,11 +60,11 @@ function f.load_lazy_syntax()
 end
 
 function f.highlight(group, color)
-	local style = 'gui='..(color.style or 'NONE')
+	local gui = 'gui='..(color.gui or 'NONE')
 	local fg = 'guifg='..(color.fg or 'NONE')
 	local bg = 'guibg='..(color.bg or 'NONE')
 	local sp = 'guisp='..(color.sp or 'NONE')
-	vim.api.nvim_command('highlight '..group..' '..style..' '..fg..' '..bg..' '..sp)
+	vim.api.nvim_command('highlight '..group..' '..gui..' '..fg..' '..bg..' '..sp)
 end
 
 
