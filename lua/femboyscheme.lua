@@ -7,7 +7,7 @@ local f = {
 	purpledark    = '#a300f5',
 	scontrast     = '#40bfbf',
 	contrast      = '#26d9d9',
-	highlight     = '#b38d51',
+	goldcontrast  = '#b38d51',
 	gothpink      = '#962d4c',
 	strongpink    = '#c3228e',
 	comment       = '#7e677e',
@@ -49,7 +49,7 @@ end
 function f.load_lazy_syntax()
 	local syntax = {
 		LineNr                      = { fg = f.gothpink},
-		CursorLineNr                = { fg = f.highlight, gui = 'bold' },
+		CursorLineNr                = { fg = f.goldcontrast, gui = 'bold' },
 		SignColumn                  = { bg = 'none' },
 		LspDiagnosticsDefaultError  = { fg = '#ec5f67' },
 		LspDiagnosticsDefaultWarning= { fg = '#fabd2f' },
