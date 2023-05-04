@@ -37,7 +37,7 @@ function f.load_syntax()
 		Keyword                     = { fg = f.purpledark },
 		Delimiter                   = { fg = f.purple },
 		Operator                    = { fg = f.normalplus },
-		VertSplit                   = { bg = 'none' },
+		VertSplit                   = { bg = f.none },
 		StatusLine                  = { gui = 'bold' },
 		StatusLineNC                = { gui = 'none' },
 		Search                      = f.search,
@@ -50,7 +50,8 @@ function f.load_lazy_syntax()
 	local syntax = {
 		LineNr                      = { fg = f.gothpink},
 		CursorLineNr                = { fg = f.goldcontrast, gui = 'bold' },
-		SignColumn                  = { bg = 'none' },
+		SignColumn                  = { bg = f.none },
+		NormalFloat                 = { fg = f.normal, bg = f.none},
 		LspDiagnosticsDefaultError  = { fg = '#ec5f67' },
 		LspDiagnosticsDefaultWarning= { fg = '#fabd2f' },
 		LspDiagnosticsDefaultHint   = { fg = '#51afef' },
