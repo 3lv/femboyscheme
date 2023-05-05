@@ -18,65 +18,37 @@ local f = {
 	errorred      = '#ad3834',
 	normal        = '#fac5e7',
 	normalplus    = '#ff9edf',
-	none          = 'NONE',
 	search        = { bg = '#c4b345', fg = '#1c1b17' },
-	incsearch     = { bg = '#c48945', fg = '#030302', gui = 'none' },
+	incsearch     = { bg = '#c48945', fg = '#030302' },
 }
 
-function f.load_syntax()
-	local syntax = {
-		Normal                      = { fg = f.normal, bg = f.none },
-		Comment                     = { gui = 'italic', fg = f.comment },
-		FFirst                      = { fg = f.fairygreen, bg = f.none },
-		FSecond                     = { fg = f.fairydarker, bg = f.none },
-		ErrorMsg                    = { fg = f.errorred },
-		MoreMsg                     = { fg = f.fairygreen },
-		Function                    = { fg = f.lightbluedark },
-		Statement                   = { fg = f.strongpink, gui = 'bold'},
-		Type                        = { fg = f.purplelight },
-		Keyword                     = { fg = f.purpledark },
-		Delimiter                   = { fg = f.purple },
-		Operator                    = { fg = f.normalplus },
-		VertSplit                   = { bg = f.none },
-		StatusLine                  = { gui = 'bold' },
-		StatusLineNC                = { gui = 'none' },
-		Search                      = f.search,
-		IncSearch                   = f.incsearch,
-	}
-	return syntax
-end
-
-function f.load_lazy_syntax()
-	local syntax = {
-		LineNr                      = { fg = f.gothpink},
-		CursorLineNr                = { fg = f.goldcontrast, gui = 'bold' },
-		SignColumn                  = { bg = f.none },
-		NormalFloat                 = { fg = f.normal, bg = f.none},
-		LspDiagnosticsDefaultError  = { fg = '#ec5f67' },
-		LspDiagnosticsDefaultWarning= { fg = '#fabd2f' },
-		LspDiagnosticsDefaultHint   = { fg = '#51afef' },
-		LspDiagnosticsDefaultInforma= { fg = '#51afef' },
-	}
-	return syntax
-end
-
-function f.highlight(group, color)
-	local gui = 'gui='..(color.gui or 'NONE')
-	local fg = 'guifg='..(color.fg or 'NONE')
-	local bg = 'guibg='..(color.bg or 'NONE')
-	local sp = 'guisp='..(color.sp or 'NONE')
-	vim.api.nvim_command('highlight '..group..' '..gui..' '..fg..' '..bg..' '..sp)
-end
-
-
-local async_lazy_load
-async_lazy_load = vim.loop.new_async(vim.schedule_wrap(function ()
-	local syntax = f.load_lazy_syntax()
-	for group, colors in pairs(syntax) do
-		f.highlight(group, colors)
-	end
-	async_lazy_load:close()
-end))
+local groups = {
+	Normal                      = { fg = f.normal, bg = f.none },
+	Comment                     = { fg = f.comment, italic = true },
+	FFirst                      = { fg = f.fairygreen, bg = f.none },
+	FSecond                     = { fg = f.fairydarker, bg = f.none },
+	ErrorMsg                    = { fg = f.errorred },
+	MoreMsg                     = { fg = f.fairygreen },
+	Function                    = { fg = f.lightbluedark },
+	Statement                   = { fg = f.strongpink, bold = true},
+	Type                        = { fg = f.purplelight },
+	Keyword                     = { fg = f.purpledark },
+	Delimiter                   = { fg = f.purple },
+	Operator                    = { fg = f.normalplus },
+	VertSplit                   = { bg = f.none },
+	StatusLine                  = { bold = true },
+	StatusLineNC                = { },
+	Search                      = f.search,
+	IncSearch                   = f.incsearch,
+	LineNr                      = { fg = f.gothpink },
+	CursorLineNr                = { fg = f.goldcontrast, bold = true },
+	SignColumn                  = { bg = f.none },
+	NormalFloat                 = { fg = f.normal, bg = f.none },
+	LspDiagnosticsDefaultError  = { fg = '#ec5f67' },
+	LspDiagnosticsDefaultWarning= { fg = '#fabd2f' },
+	LspDiagnosticsDefaultHint   = { fg = '#51afef' },
+	LspDiagnosticsDefaultInforma= { fg = '#51afef' },
+}
 
 function f.colorscheme()
 	if vim.fn.exists('syntax_on') then
@@ -85,11 +57,9 @@ function f.colorscheme()
 	vim.o.background = 'dark'
 	vim.o.termguicolors = true
 	vim.g.colors_name = 'femboyscheme'
-	local syntax = f.load_syntax()
-	for group, colors in pairs(syntax) do
-		f.highlight(group, colors)
+	for group, settings in pairs(groups) do
+		vim.api.nvim_set_hl(0, group, settings)
 	end
-	async_lazy_load:send()
 end
 
 f.colorscheme()
